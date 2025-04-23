@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da Memória: Humano vs IA</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Jogo da Memória</h1>
+            <p>Desafie a IA Expert e descubra quem é o melhor!</p>
+        </header>
+        
+        <div class="game-info">
+            <div class="stats">
+                <div class="moves">
+                    <span>Movimentos:</span>
+                    <span id="moves-count">0</span>
+                </div>
+                <div class="timer">
+                    <span>Tempo:</span>
+                    <span id="time">00:00</span>
+                </div>
+            </div>
+            <div class="game-controls">
+                <button id="stop" class="control-button">Parar</button>
+            </div>
+        </div>
+        
+        <div class="mode-selector">
+            <div class="mode-info">
+                <div id="human-score" class="score-display">
+                    <h3>Jogador Humano</h3>
+                    <p>Melhor tempo: <span id="human-best-time">--:--</span></p>
+                    <p>Movimentos: <span id="human-best-moves">--</span></p>
+                </div>
+                <div id="ai-score" class="score-display">
+                    <h3>IA Expert</h3>
+                    <p>Melhor tempo: <span id="ai-best-time">--:--</span></p>
+                    <p>Movimentos: <span id="ai-best-moves">--</span></p>
+                </div>
+            </div>
+            <div class="mode-buttons">
+                <button id="human-mode" class="mode-button">Jogar Manualmente</button>
+                <button id="ai-mode" class="mode-button">Deixar IA Jogar</button>
+            </div>
+        </div>
+        
+        <div class="game-container">
+            <div class="cards" id="cards">
+                <!-- Cartas serão adicionadas via JavaScript -->
+            </div>
+        </div>
+        
+        <div class="controls">
+            <button id="start" class="control-button">Iniciar Novo Jogo</button>
+            <div class="difficulty">
+                <span>Dificuldade:</span>
+                <select id="difficulty">
+                    <option value="easy">Fácil (4x3)</option>
+                    <option value="medium" selected>Médio (4x4)</option>
+                    <option value="hard">Difícil (5x4)</option>
+                </select>
+            </div>
+        </div>
+        
+        <!-- Modal de Resultado -->
+        <div class="modal" id="result-modal">
+            <div class="modal-content">
+                <h2 id="result-text">Parabéns! Você venceu!</h2>
+                <div class="result-stats">
+                    <p>Tempo: <span id="result-time">00:00</span></p>
+                    <p>Movimentos: <span id="result-moves">0</span></p>
+                </div>
+                <div id="comparison-stats" class="comparison">
+                    <h3>Comparação</h3>
+                    <div class="comparison-row">
+                        <div class="comparison-cell">
+                            <strong>Humano</strong>
+                            <p>Tempo: <span id="compare-human-time">--:--</span></p>
+                            <p>Movimentos: <span id="compare-human-moves">--</span></p>
+                        </div>
+                        <div class="comparison-cell">
+                            <strong>IA Expert</strong>
+                            <p>Tempo: <span id="compare-ai-time">--:--</span></p>
+                            <p>Movimentos: <span id="compare-ai-moves">--</span></p>
+                        </div>
+                    </div>
+                    <p id="winner-text">Você venceu a IA!</p>
+                </div>
+                <button id="play-again" class="control-button">Jogar Novamente</button>
+            </div>
+        </div>
+        
+        <footer>
+            <p>Desenvolvido por William Peixoto &copy; 2025</p>
+        </footer>
+    </div>
+    
+    <script src="js/script.js"></script>
+</body>
+</html>
